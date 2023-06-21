@@ -1,0 +1,45 @@
+[1/19] Performing build step for 'bootloader'
+[1/1] cd /ESP32-LoRaMac-node/build/bootloader/esp-idf/esptool_py && /opt/esp/python_env/idf5.0_py3.8_env/bin/python /opt/esp/idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /ESP32-LoRaMac-node/build/bootloader/bootloader.bin
+Bootloader binary size 0x6700 bytes. 0x900 bytes (8%) free.
+[2/17] Building C object esp-idf/Loramac/CMakeFiles/__idf_Loramac.dir/boards/ESP32/spi-board.c.obj
+/ESP32-LoRaMac-node/components/Loramac/boards/ESP32/spi-board.c: In function 'SpiInOut':
+/ESP32-LoRaMac-node/components/Loramac/boards/ESP32/spi-board.c:84:12: warning: returning 'uint8_t *' {aka 'unsigned char *'} from a function with return type 'uint16_t' {aka 'short unsigned int'} makes integer from pointer without a cast [-Wint-conversion]
+   84 |     return rx_buffer;
+      |            ^~~~~~~~~
+[3/17] Building C object esp-idf/ping-pong/CMakeFiles/__idf_ping-pong.dir/ping-pong.c.obj
+[4/17] Building C object esp-idf/Loramac/CMakeFiles/__idf_Loramac.dir/boards/ESP32/sx1276-board.c.obj
+[5/17] Building C object esp-idf/test-loramac/CMakeFiles/__idf_test-loramac.dir/test-sx1276.c.obj
+[6/17] Building C object esp-idf/test-loramac/CMakeFiles/__idf_test-loramac.dir/test-ping.c.obj
+[7/17] Building C object esp-idf/Loramac/CMakeFiles/__idf_Loramac.dir/boards/ESP32/board.c.obj
+/ESP32-LoRaMac-node/components/Loramac/boards/ESP32/board.c: In function 'BoardGetUniqueId':
+/ESP32-LoRaMac-node/components/Loramac/boards/ESP32/board.c:101:31: warning: passing argument 1 of 'esp_efuse_mac_get_default' from incompatible pointer type [-Wincompatible-pointer-types]
+  101 |     esp_efuse_mac_get_default(&chip_id);
+      |                               ^~~~~~~~
+      |                               |
+      |                               uint8_t (*)[8] {aka unsigned char (*)[8]}
+In file included from /ESP32-LoRaMac-node/components/Loramac/boards/ESP32/board.c:27:
+/opt/esp/idf/components/esp_hw_support/include/esp_mac.h:120:46: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t (*)[8]' {aka 'unsigned char (*)[8]'}
+  120 | esp_err_t esp_efuse_mac_get_default(uint8_t *mac);
+      |                                     ~~~~~~~~~^~~
+[8/17] Building C object esp-idf/test-loramac/CMakeFiles/__idf_test-loramac.dir/test-spi.c.obj
+[9/17] Building C object esp-idf/Loramac/CMakeFiles/__idf_Loramac.dir/radio/sx1276/sx1276.c.obj
+[10/17] Linking C static library esp-idf/Loramac/libLoramac.a
+[11/17] Linking C static library esp-idf/ping-pong/libping-pong.a
+[12/17] Linking C static library esp-idf/test-loramac/libtest-loramac.a
+[13/17] Generating ld/sections.ld
+[14/17] Linking CXX executable main.elf
+[15/17] Generating binary image from built executable
+esptool.py v4.5.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /ESP32-LoRaMac-node/build/main.bin
+[16/17] cd /ESP32-LoRaMac-node/build/esp-idf/esptool_py && /opt/esp/python_env/idf5.0_py3.8_env/bin/python /opt/esp/idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /ESP32-LoRaMac-node/build/partition_table/partition-table.bin /ESP32-LoRaMac-node/build/main.bin
+main.bin binary size 0x390b0 bytes. Smallest app partition is 0x100000 bytes. 0xc6f50 bytes (78%) free.
+[16/17] cd /opt/esp/idf/components/esptool_py && /opt/esp/tools/cmake/3.24.0/bin/cmake -D IDF_PATH=/opt/esp/idf -D "SERIAL_TOOL=/opt/esp/python_env/idf5.0_py3.8_env/bin/python;;/opt/esp/idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/ESP32-LoRaMac-node/build -P /opt/esp/idf/components/esptool_py/run_serial_tool.cmake
+esptool esp32 -p rfc2217://172.17.0.1:4000?ign_set_control -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 main.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.5.1
+Serial port rfc2217://172.17.0.1:4000?ign_set_control
+Connecting...
+Device PID identification is only supported on COM and /dev/ serial ports.
+.ninja: build stopped: interrupted by user.

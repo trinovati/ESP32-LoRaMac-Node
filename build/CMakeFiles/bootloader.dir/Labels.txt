@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/ESP32-LoRaMac-node/build/CMakeFiles/bootloader
+/ESP32-LoRaMac-node/build/CMakeFiles/bootloader.rule
+/ESP32-LoRaMac-node/build/CMakeFiles/bootloader-complete.rule
+/ESP32-LoRaMac-node/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/ESP32-LoRaMac-node/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/ESP32-LoRaMac-node/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/ESP32-LoRaMac-node/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/ESP32-LoRaMac-node/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/ESP32-LoRaMac-node/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/ESP32-LoRaMac-node/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

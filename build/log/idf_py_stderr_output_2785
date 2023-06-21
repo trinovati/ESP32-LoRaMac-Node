@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/opt/esp/python_env/idf5.0_py3.8_env/lib/python3.8/site-packages/esptool/__main__.py", line 9, in <module>
+    esptool._main()
+  File "/opt/esp/python_env/idf5.0_py3.8_env/lib/python3.8/site-packages/esptool/__init__.py", line 1032, in _main
+    main()
+  File "/opt/esp/python_env/idf5.0_py3.8_env/lib/python3.8/site-packages/esptool/__init__.py", line 674, in main
+    esp = esp or get_default_connected_device(
+  File "/opt/esp/python_env/idf5.0_py3.8_env/lib/python3.8/site-packages/esptool/__init__.py", line 920, in get_default_connected_device
+    _esp = chip_class(each_port, initial_baud, trace)
+  File "/opt/esp/python_env/idf5.0_py3.8_env/lib/python3.8/site-packages/esptool/loader.py", line 302, in __init__
+    self._port = serial.serial_for_url(port)
+  File "/opt/esp/python_env/idf5.0_py3.8_env/lib/python3.8/site-packages/serial/__init__.py", line 90, in serial_for_url
+    instance.open()
+  File "/opt/esp/python_env/idf5.0_py3.8_env/lib/python3.8/site-packages/serial/rfc2217.py", line 492, in open
+    self._update_rts_state()
+  File "/opt/esp/python_env/idf5.0_py3.8_env/lib/python3.8/site-packages/serial/rfc2217.py", line 682, in _update_rts_state
+    self.rfc2217_set_control(SET_CONTROL_RTS_ON)
+  File "/opt/esp/python_env/idf5.0_py3.8_env/lib/python3.8/site-packages/serial/rfc2217.py", line 881, in rfc2217_set_control
+    item.set(value)  # transmit desired control type
+  File "/opt/esp/python_env/idf5.0_py3.8_env/lib/python3.8/site-packages/serial/rfc2217.py", line 335, in set
+    self.connection.rfc2217_send_subnegotiation(self.option, self.value)
+  File "/opt/esp/python_env/idf5.0_py3.8_env/lib/python3.8/site-packages/serial/rfc2217.py", line 867, in rfc2217_send_subnegotiation
+    self._internal_raw_write(IAC + SB + COM_PORT_OPTION + option + value + IAC + SE)
+  File "/opt/esp/python_env/idf5.0_py3.8_env/lib/python3.8/site-packages/serial/rfc2217.py", line 858, in _internal_raw_write
+    self._socket.sendall(data)
+BrokenPipeError: [Errno 32] Broken pipe
+CMake Error at run_serial_tool.cmake:55 (message):
+  
+  /opt/esp/python_env/idf5.0_py3.8_env/bin/python;;/opt/esp/idf/components/esptool_py/esptool/esptool.py;--chip;esp32
+  failed
+
+
